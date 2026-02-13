@@ -10,17 +10,22 @@ export default function EventsPage() {
 
   useEffect(() => {
     async function fetchEvents() {
-      const data = await getEvents();
+      const data = await getEvents(); // Fetch events from Firestore
       setEvents(data);
       setLoading(false);
     }
     fetchEvents();
   }, []);
-
+  
+  //form submission
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!form.title || !form.date || !form.location || !auth.currentUser) return;
+
+     // Save new event with current user as host
     await createEvent({ ...form, host: auth.currentUser.uid });
+
+    // Reset form and fetch updated events
     setForm({ title: "", description: "", date: "", location: "" });
     const data = await getEvents();
     setEvents(data);

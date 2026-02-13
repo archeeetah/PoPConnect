@@ -11,3 +11,4 @@ export async function saveDIDToFirestore(firebaseUID: string, address: string) {
     createdAt: new Date(),
   }, { merge: true });
 }
+
