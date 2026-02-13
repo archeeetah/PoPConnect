@@ -144,6 +144,3 @@ Integrate an external events API to display the latest trending events happening
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
----
-
-**Built with ❤️ by the MugenMinds team**
